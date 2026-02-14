@@ -304,6 +304,16 @@ h2 {
   padding: 28px 0 34px;
 }
 
+.comments-section {
+  padding: 40px 0 72px;
+  background: #fff;
+  border-top: 1px solid var(--line);
+}
+
+#disqus_thread {
+  margin-top: 1rem;
+}
+
 .footer-wrap {
   display: flex;
   justify-content: space-between;
