@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문의 | Atelier Blanc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">Atelier Blanc</a>
+      <nav class="main-nav">
+        <a href="about.html">소개</a>
+        <a href="classes.html">온라인 클래스</a>
+        <a href="enroll.html">신청/결제</a>
+        <a href="studio.html">작업실</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content reveal">
+        <p class="eyebrow">Contact</p>
+        <h1>문의는 빠르게,<br>안내는 구체적으로</h1>
+        <p>수업 난이도, 일정, 결제 방식 등 운영팀이 확인 후 순차 답변드립니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container footer-wrap">
+        <div class="info-panel reveal">
+          <h2>문의 채널 안내</h2>
+          <p>평일 10:00 - 19:00 내 접수된 문의는 당일 또는 익일 오전에 답변드립니다.</p>
+          <p>결제 관련 문의는 주문번호를 함께 남겨주시면 가장 빠르게 확인됩니다.</p>
+        </div>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xqedqqyb"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Atelier Blanc 문의 접수">
+          <label>
+            이름
+            <input type="text" name="name" required placeholder="홍길동">
+          </label>
+          <label>
+            이메일
+            <input type="email" name="email" required placeholder="you@example.com">
+          </label>
+          <label>
+            문의 내용
+            <textarea name="message" rows="5" required placeholder="문의하실 내용을 입력해 주세요."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">문의 보내기</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Atelier Blanc</h3>
+        <p>문의 접수 후 회신까지 최대 1영업일 소요</p>
+      </div>
+      <a class="btn btn-small" href="index.html">홈으로 이동</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

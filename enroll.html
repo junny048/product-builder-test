@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신청/결제 | Atelier Blanc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">Atelier Blanc</a>
+      <nav class="main-nav">
+        <a href="about.html">소개</a>
+        <a href="classes.html">온라인 클래스</a>
+        <a href="enroll.html">신청/결제</a>
+        <a href="studio.html">작업실</a>
+        <a href="contact.html">문의</a>
+      </nav>
+      <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content reveal">
+        <p class="eyebrow">Enroll & Pay</p>
+        <h1>신청 정보와 결제 요청 데이터를<br>한 번에 준비</h1>
+        <p>실제 결제 모듈 연동 시 서버 API(<code>/api/enroll</code>)와 PG SDK만 연결하면 됩니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="enroll-layout">
+          <form id="enroll-form" class="enroll-form" action="/api/enroll" method="post">
+            <div class="field-grid">
+              <label>
+                신청 클래스
+                <select name="course" id="course" required>
+                  <option value="">선택하세요</option>
+                </select>
+              </label>
+
+              <label>
+                이름
+                <input type="text" name="name" required placeholder="홍길동">
+              </label>
+
+              <label>
+                이메일
+                <input type="email" name="email" required placeholder="you@example.com">
+              </label>
+
+              <label>
+                연락처
+                <input type="tel" name="phone" required placeholder="010-0000-0000">
+              </label>
+            </div>
+
+            <fieldset>
+              <legend>결제 수단</legend>
+              <div class="payment-methods">
+                <label><input type="radio" name="paymentMethod" value="card" checked> 카드</label>
+                <label><input type="radio" name="paymentMethod" value="trans"> 계좌이체</label>
+                <label><input type="radio" name="paymentMethod" value="vbank"> 가상계좌</label>
+              </div>
+            </fieldset>
+
+            <label>
+              요청 사항
+              <textarea name="memo" rows="4" placeholder="수업 전 궁금한 점을 남겨주세요."></textarea>
+            </label>
+
+            <label class="checkbox">
+              <input type="checkbox" name="agree" required>
+              개인정보 수집 및 결제 진행에 동의합니다.
+            </label>
+
+            <input type="hidden" name="amount" id="amount" value="0">
+            <input type="hidden" name="orderId" id="orderId" value="">
+            <input type="hidden" name="paymentGateway" value="TOSS_PAYMENTS">
+
+            <button type="submit" class="btn btn-primary">신청 후 결제 진행</button>
+          </form>
+
+          <aside class="checkout-preview">
+            <h3>결제 요청 미리보기</h3>
+            <p id="summary-course">클래스를 선택하면 금액이 표시됩니다.</p>
+            <p id="summary-amount">결제 금액: 0원</p>
+            <code id="payload-preview">{}</code>
+            <p class="help-text">클래스 페이지에서 선택 후 이동하면 해당 클래스가 자동 선택됩니다.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Atelier Blanc</h3>
+        <p>결제 전 문의가 필요하면 문의 페이지를 이용해 주세요.</p>
+      </div>
+      <a class="btn btn-small" href="contact.html">문의하기</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

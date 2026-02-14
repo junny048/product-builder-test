@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -12,13 +12,13 @@
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="#" class="logo">Atelier Blanc</a>
+      <a href="index.html" class="logo">Atelier Blanc</a>
       <nav class="main-nav">
-        <a href="#about">소개</a>
-        <a href="#classes">온라인 클래스</a>
-        <a href="#enroll">신청/결제</a>
-        <a href="#gallery">작업실</a>
-        <a href="#contact">문의</a>
+        <a href="about.html">소개</a>
+        <a href="classes.html">온라인 클래스</a>
+        <a href="enroll.html">신청/결제</a>
+        <a href="studio.html">작업실</a>
+        <a href="contact.html">문의</a>
       </nav>
       <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
     </div>
@@ -26,172 +26,43 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
+      <div class="container hero-content reveal">
         <p class="eyebrow">Designer Workshop</p>
-        <h1>손끝에서 시작되는<br>당신의 디자인 공방</h1>
+        <h1>화이트 스튜디오 감성으로<br>디자인을 실전으로 바꾸는 공간</h1>
         <p class="hero-text">
-          화이트 톤의 차분한 공간에서 오프라인 공방 경험과 온라인 클래스를 함께 제공합니다.
-          초보자부터 실무 디자이너까지, 실전 중심 커리큘럼을 만나보세요.
+          HTML/CSS/JS에 JSON 데이터 기반 렌더링을 더해, 관리가 쉬운 다중 페이지 구조로 확장했습니다.
+          메뉴마다 각각 독립 URL로 이동하고 콘텐츠도 분리됩니다.
         </p>
         <div class="hero-actions">
-          <a href="#classes" class="btn btn-primary">클래스 둘러보기</a>
-          <a href="#enroll" class="btn btn-ghost">신청하기</a>
+          <a href="classes.html" class="btn btn-primary">클래스 보러가기</a>
+          <a href="enroll.html" class="btn btn-ghost">바로 신청하기</a>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <div class="container split">
-        <div>
-          <h2>공방 소개</h2>
-          <p>
-            Atelier Blanc는 브랜딩, 패키지, 그래픽 아트를 중심으로 운영되는 디자이너 공방입니다.
-            창작자에게 필요한 과정만 압축해 빠르게 결과물을 만들 수 있게 돕습니다.
-          </p>
-        </div>
-        <ul class="feature-list">
-          <li>소규모 맞춤 피드백</li>
-          <li>주차별 실습 과제와 리뷰</li>
-          <li>온라인/오프라인 연동 커리큘럼</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="classes" class="section alt">
+    <section class="section">
       <div class="container">
-        <h2>온라인 클래스</h2>
+        <h2>페이지 바로가기</h2>
         <div class="cards">
-          <article class="card">
-            <h3>브랜딩 기초 4주</h3>
-            <p>브랜드 콘셉트 정의부터 로고/톤앤매너 설계까지.</p>
-            <button class="btn btn-small class-select" data-course="브랜딩 기초 4주">이 클래스로 신청</button>
+          <article class="card reveal">
+            <h3>소개</h3>
+            <p>공방 철학과 운영 방식, 학습 방향을 확인하세요.</p>
+            <a class="btn btn-small" href="about.html">소개 페이지</a>
           </article>
-          <article class="card">
-            <h3>패키지 디자인 실전</h3>
-            <p>시장 분석, 시안 제작, 목업 완성까지 한 번에.</p>
-            <button class="btn btn-small class-select" data-course="패키지 디자인 실전">이 클래스로 신청</button>
+          <article class="card reveal">
+            <h3>온라인 클래스</h3>
+            <p>JSON 기반으로 렌더링되는 최신 클래스 목록입니다.</p>
+            <a class="btn btn-small" href="classes.html">클래스 페이지</a>
           </article>
-          <article class="card">
-            <h3>포트폴리오 제작 코칭</h3>
-            <p>수강생 작품 리뷰 + 취업/프리랜서용 포트폴리오 정리.</p>
-            <button class="btn btn-small class-select" data-course="포트폴리오 제작 코칭">이 클래스로 신청</button>
+          <article class="card reveal">
+            <h3>신청/결제</h3>
+            <p>클래스 선택부터 결제 요청 payload 미리보기까지 제공합니다.</p>
+            <a class="btn btn-small" href="enroll.html">신청 페이지</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="enroll" class="section">
-      <div class="container">
-        <h2>신청 폼 / 결제 연결</h2>
-        <p class="section-lead">이 폼은 신청 정보와 결제 요청 데이터를 함께 만들도록 구성되어 있습니다. 실제 결제 모듈 연동 시 서버 엔드포인트만 연결하면 됩니다.</p>
-
-        <div class="enroll-layout">
-          <form id="enroll-form" class="enroll-form" action="/api/enroll" method="post">
-            <div class="field-grid">
-              <label>
-                신청 클래스
-                <select name="course" id="course" required>
-                  <option value="">선택하세요</option>
-                  <option value="브랜딩 기초 4주">브랜딩 기초 4주 (220,000원)</option>
-                  <option value="패키지 디자인 실전">패키지 디자인 실전 (270,000원)</option>
-                  <option value="포트폴리오 제작 코칭">포트폴리오 제작 코칭 (320,000원)</option>
-                </select>
-              </label>
-
-              <label>
-                이름
-                <input type="text" name="name" required placeholder="홍길동">
-              </label>
-
-              <label>
-                이메일
-                <input type="email" name="email" required placeholder="you@example.com">
-              </label>
-
-              <label>
-                연락처
-                <input type="tel" name="phone" required placeholder="010-0000-0000">
-              </label>
-            </div>
-
-            <fieldset>
-              <legend>결제 수단</legend>
-              <div class="payment-methods">
-                <label><input type="radio" name="paymentMethod" value="card" checked> 카드</label>
-                <label><input type="radio" name="paymentMethod" value="trans"> 계좌이체</label>
-                <label><input type="radio" name="paymentMethod" value="vbank"> 가상계좌</label>
-              </div>
-            </fieldset>
-
-            <label>
-              요청 사항
-              <textarea name="memo" rows="4" placeholder="수업 전 궁금한 점을 남겨주세요."></textarea>
-            </label>
-
-            <label class="checkbox">
-              <input type="checkbox" name="agree" required>
-              개인정보 수집 및 결제 진행에 동의합니다.
-            </label>
-
-            <input type="hidden" name="amount" id="amount" value="0">
-            <input type="hidden" name="orderId" id="orderId" value="">
-            <input type="hidden" name="paymentGateway" value="TOSS_PAYMENTS">
-
-            <button type="submit" class="btn btn-primary">신청 후 결제 진행</button>
-          </form>
-
-          <aside class="checkout-preview">
-            <h3>결제 요청 미리보기</h3>
-            <p id="summary-course">클래스를 선택하면 금액이 표시됩니다.</p>
-            <p id="summary-amount">결제 금액: 0원</p>
-            <code id="payload-preview">{}</code>
-            <p class="help-text">`/api/enroll`에서 신청 저장 후, 서버에서 결제 승인 API로 연결하는 흐름을 권장합니다.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section alt">
-      <div class="container">
-        <h2>작업실 무드</h2>
-        <div class="mood-grid">
-          <div>Soft White</div>
-          <div>Paper Texture</div>
-          <div>Natural Light</div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer id="contact" class="site-footer">
-    <div class="container footer-wrap">
-      <div>
-        <h3>Atelier Blanc</h3>
-        <p>디자이너 공방 & 온라인 클래스</p>
-      </div>
-
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/xqedqqyb"
-        method="POST"
-      >
-        <input type="hidden" name="_subject" value="Atelier Blanc 문의 접수">
-        <label>
-          이름
-          <input type="text" name="name" required placeholder="홍길동">
-        </label>
-        <label>
-          이메일
-          <input type="email" name="email" required placeholder="you@example.com">
-        </label>
-        <label>
-          문의 내용
-          <textarea name="message" rows="4" required placeholder="문의하실 내용을 입력해 주세요."></textarea>
-        </label>
-        <button type="submit" class="btn btn-primary">문의 보내기</button>
-      </form>
-    </div>
-  </footer>
 
   <section class="comments-section" aria-label="댓글">
     <div class="container">
@@ -200,16 +71,26 @@
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Atelier Blanc</h3>
+        <p>디자이너 공방 & 온라인 클래스</p>
+      </div>
+      <p class="help-text">문의는 상단 메뉴의 문의 페이지에서 남겨주세요.</p>
+    </div>
+  </footer>
+
   <script>
     var disqus_config = function () {
-      this.page.url = window.location.href.split("#")[0];
-      this.page.identifier = "atelier-blanc-home";
+      this.page.url = window.location.href.split('#')[0];
+      this.page.identifier = 'atelier-blanc-home';
     };
 
     (function() {
-      var d = document, s = d.createElement("script");
-      s.src = "https://productbuilder-cx8y7jjhfa.disqus.com/embed.js";
-      s.setAttribute("data-timestamp", +new Date());
+      var d = document, s = d.createElement('script');
+      s.src = 'https://productbuilder-cx8y7jjhfa.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();
   </script>
