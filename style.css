@@ -307,8 +307,36 @@ h2 {
 .footer-wrap {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
+}
+
+.contact-form {
+  width: min(420px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.62rem 0.72rem;
+  font-size: 0.92rem;
+  background: #fff;
 }
 
 @media (max-width: 900px) {
@@ -358,5 +386,9 @@ h2 {
   .footer-wrap {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .contact-form {
+    width: 100%;
   }
 }
